@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0e11;
+  color: white;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT (Yahoo style) */
+.sidebar {
+  width: 220px;
+  background: #1e2329;
+  padding: 10px;
+}
+
+/* CENTER (Binance style) */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+#price {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* RIGHT PANEL */
+.rightbar {
+  width: 250px;
+  background: #161a1e;
+  padding: 10px;
+}
+
+.market-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.market-item:hover {
+  background: #2b3139;
+}

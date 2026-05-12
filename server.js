@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const axios = require("axios");
 require("dotenv").config();
@@ -7,6 +8,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname);
+});
 
 // 🔵 ENDPOINT MARKET QUOTE
 app.get("/market/quote/:symbol", async (req, res) => {

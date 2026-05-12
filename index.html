@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MarketPulse</title>
+  <link rel="stylesheet" href="frontend/css/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- LEFT: Yahoo-style market list -->
+  <div class="sidebar">
+    <h3>Markets</h3>
+    <div id="marketList"></div>
+  </div>
+
+  <!-- CENTER: Binance-style main panel -->
+  <div class="main">
+
+    <div class="header">
+      <h2 id="symbol">--</h2>
+      <div id="price">--</div>
+      <div id="change">--</div>
+    </div>
+
+    <div class="chart">
+      <p>📈 Chart placeholder (later Chart.js)</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: alerts / watchlist -->
+  <div class="rightbar">
+    <h3>Watchlist</h3>
+    <div id="watchlist"></div>
+
+    <h3>Alerts</h3>
+    <div id="alerts"></div>
+  </div>
+
+</div>
+
+<script type="module" src="./js/app.js"></script>
+
+</body>
+</html>
