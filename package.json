@@ -1,0 +1,35 @@
+{
+  "name": "hackaton-cifolavioleta-18-05-2026",
+  "version": "1.0.0",
+  "description": "Plataforma web de simulació i visualització de mercats financers en temps real desenvolupada per a un hackató.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jofre/hackaton-CIFOLaVioleta-18-05-2026.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jofre/hackaton-CIFOLaVioleta-18-05-2026/issues"
+  },
+  "homepage": "https://github.com/Jofre/hackaton-CIFOLaVioleta-18-05-2026#readme",
+  "dependencies": {
+    "axios": "^1.16.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
