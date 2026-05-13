@@ -47,3 +47,31 @@ body {
 .market-item:hover {
   background: #2b3139;
 }
+
+#hero {
+  padding: 40px 0;
+}
+
+#hero {
+  background: linear-gradient(135deg, #0a1f44, #1a1a1a);
+  color: white;
+  padding: 60px 0;
+}
+
+.hero-container {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  flex: 2;
+}
