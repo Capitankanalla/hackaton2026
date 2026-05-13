@@ -3,8 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <title>MarketPulse</title>
-  <link rel="stylesheet" href="frontend/css/style.css">
+  <link rel="stylesheet" href="./frontend/css/style.css">
 </head>
+
+<section id="hero">
+  <div class="hero-container">
+
+    <div class="hero-left">
+      <h1>MarketPulse</h1>
+      <p>Seguiment de mercats en temps real</p>
+
+      <select id="market-select">
+        <option value="spain">Espanya (IBEX35)</option>
+        <option value="usa">USA (NASDAQ + S&P500)</option>
+        <option value="crypto">Crypto</option>
+        <option value="europe">Europa</option>
+        <option value="forex">Forex</option>
+      </select>
+    </div>
+
+    <div class="hero-right">
+      <div id="carousel-container">
+        <!-- Carroussel dinàmic -->
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <body>
 
@@ -12,7 +37,7 @@
 
   <!-- LEFT: Yahoo-style market list -->
   <div class="sidebar">
-    <h3>Markets</h3>
+    <h3>Mercats</h3>
     <div id="marketList"></div>
   </div>
 
@@ -33,10 +58,10 @@
 
   <!-- RIGHT: alerts / watchlist -->
   <div class="rightbar">
-    <h3>Watchlist</h3>
+    <h3>Preferits</h3>
     <div id="watchlist"></div>
 
-    <h3>Alerts</h3>
+    <h3>Alertes</h3>
     <div id="alerts"></div>
   </div>
 
