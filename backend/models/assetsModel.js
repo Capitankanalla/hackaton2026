@@ -47,6 +47,24 @@ const AssetsModel = {
     );
 
     return result.insertId;
+  },
+
+   async getAvailableMarkets() {
+    const [rows] = await db.query(`
+      SELECT DISTINCT market
+      FROM assets
+      WHERE market IS NOT NULL AND market <> ''
+      ORDER BY market ASC
+    `);
+    return rows;
+  },
+
+    async getAssetsByMarket(market) {
+    const [rows] = await db.query(
+      "SELECT * FROM assets WHERE market = ? ORDER BY symbol ASC",
+      [market]
+    );
+    return rows;
   }
 };
 
