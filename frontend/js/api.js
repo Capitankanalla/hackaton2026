@@ -4,3 +4,8 @@ export async function getQuote(symbol) {
   const res = await fetch(`${BASE}/market/quote/${symbol}`);
   return res.json();
 }
+
+export async function getAssetsByMarket(market) {
+  const res = await fetch(`${BASE}/api/assets/${market}`);
+  return res.json();
+}

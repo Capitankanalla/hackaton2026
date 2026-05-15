@@ -21,3 +21,22 @@ loadMarket(state.selected);
 setInterval(() => {
   loadMarket(state.selected);
 }, 30000);
+
+import { getAssetsByMarket } from "./api.js";
+import { renderCarousel } from "./ui.js";
+
+const heroSelect = document.getElementById("market-select");
+
+heroSelect.addEventListener("change", async (e) => {
+  const market = e.target.value;
+  state.selected = market;
+
+  const assets = await getAssetsByMarket(market);
+  renderCarousel(assets);
+});
+
+// carregar carroussel inicial
+(async () => {
+  const assets = await getAssetsByMarket(state.selected);
+  renderCarousel(assets);
+})();

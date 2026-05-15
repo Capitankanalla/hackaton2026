@@ -75,3 +75,35 @@ body {
 .hero-right {
   flex: 2;
 }
+
+#carousel-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.carousel-item {
+  min-width: 180px;
+  background: #1e2329;
+  padding: 15px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.carousel-item:hover {
+  background: #2b3139;
+}
+
+.carousel-symbol {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.carousel-name {
+  font-size: 14px;
+  opacity: 0.7;
+}

@@ -21,3 +21,20 @@ export function renderQuote(data) {
   document.getElementById("price").innerText = data.price;
   document.getElementById("change").innerText = data.percent + "%";
 }
+
+export function renderCarousel(assets) {
+  const container = document.getElementById("carousel-container");
+  container.innerHTML = "";
+
+  assets.forEach(asset => {
+    const div = document.createElement("div");
+    div.className = "carousel-item";
+
+    div.innerHTML = `
+      <div class="carousel-symbol">${asset.symbol}</div>
+      <div class="carousel-name">${asset.name}</div>
+    `;
+
+    container.appendChild(div);
+  });
+}
