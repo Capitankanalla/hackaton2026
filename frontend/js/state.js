@@ -1,5 +1,5 @@
 export const state = {
-  selected: "españa",
-  markets: ["españa", "usa", "europe", "asia"],
+  selected: "ibex35",
+  markets: ["ibex35", "usa", "europe", "asia"],
   data: null
 };
