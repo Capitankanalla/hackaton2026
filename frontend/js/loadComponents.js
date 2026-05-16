@@ -4,8 +4,10 @@ export async function loadComponent(id, file) {
     console.error(`No s'ha trobat el contenidor #${id}`);
     return;
   }
+  
 
   try {
+    
     const res = await fetch(`/frontend/html/${file}`);
     if (!res.ok) {
       console.error(`Error carregant component ${file}:`, res.status);
