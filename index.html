@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>MarketPulse</title>
@@ -8,86 +9,86 @@
 
 <body>
 
-<header id="header">
+  <header id="header">
 
-  <div class="header-top">
-    <div class="header-left">
-      <h1>MarketPulse</h1>
-      <p>Seguiment de mercats en temps real</p>
+    <div class="header-top">
+      <div class="header-left">
+        <h1>MarketPulse</h1>
+        <p>Seguiment de mercats en temps real</p>
+      </div>
+
+      <div class="header-right">
+        <select id="market-select">
+          <option value="ibex35">España</option>
+          <option value="usa">USA</option>
+          <option value="europe">Europa</option>
+          <option value="asia">Asia</option>
+        </select>
+      </div>
     </div>
 
-    <div class="header-right">
-      <select id="market-select">
-        <option value="ibex35">España</option>
-        <option value="usa">USA</option>
-        <option value="europe">Europa</option>
-        <option value="asia">Asia</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="header-ticker">
-    <div id="ticker-container">
-    </div>
-  </div>
-
-</header>
-
-
-<!-- LAYOUT PRINCIPAL -->
-<main class="layout">
-
-  <!-- LEFT SIDEBAR -->
-   <aside class="sidebar">
-    <div id="marketList"></div>
-  <h3>Tendències</h3>
-  <div id="trending"></div>
-
-  <h3>Volums més alts</h3>
-  <div id="highVolume"></div>
-
-  <h3>Gainers / Losers</h3>
-  <div id="gainersLosers"></div>
-</aside>
-
-   
-  <!-- <aside class="sidebar">
-    <h3>Mercats</h3>
-    <div id="marketList"></div>
-  </aside> -->
-
-  <!-- CONTINGUT CENTRAL -->
-  <section class="main">
-
-    <div class="header">
-      <h2 id="symbol">--</h2>
-      <div id="price">--</div>
-      <div id="change">--</div>
+    <div class="header-ticker">
+      <div id="ticker-container">
+      </div>
     </div>
 
-    <div class="chart">
+  </header>
+
+
+  <!-- LAYOUT PRINCIPAL -->
+  <main class="layout">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div id="marketList"></div>
+      <h3>Tendències</h3>
+      <div id="trending"></div>
+
+      <h3>Volums més alts</h3>
+      <div id="highVolume"></div>
+
+      <h3>Gainers / Losers</h3>
+      <div id="gainersLosers"></div>
+    </aside>
+
+    <!-- CONTINGUT CENTRAL -->
+    <section class="main">
+
+      <div class="header">
+        <h2 id="symbol">--</h2>
+        <div id="price">--</div>
+        <div id="change">--</div>
+      </div>
+
+      <!-- <div class="chart">
       <p>📈 Chart placeholder (later Chart.js)</p>
-    </div>
+    </div> -->
+      <div id="chart-container"></div>
+    </section>
 
-  </section>
+    <!-- RIGHT SIDEBAR -->
 
-  <!-- RIGHT SIDEBAR -->
-  <aside class="rightbar">
+    <aside class="rightbar">
+      <div id="sidebar-right"></div>
+    </aside>
+
+    <!-- <aside class="rightbar">
     <h3>Preferits</h3>
     <div id="watchlist"></div>
 
     <h3>Alertes</h3>
     <div id="alerts"></div>
-  </aside>
+  </aside> -->
 
-</main>
+  </main>
 
 
-<!-- JS MODULES -->
-<script type="module" src="/frontend/js/state.js"></script>
-<script type="module" src="/frontend/js/api.js"></script>
-<script type="module" src="/frontend/js/ui.js"></script>
-<script type="module" src="/frontend/js/app.js"></script>
+  <!-- JS MODULES -->
+  <script type="module" src="/frontend/js/state.js"></script>
+  <script type="module" src="/frontend/js/api.js"></script>
+  <script type="module" src="/frontend/js/ui.js"></script>
+  <script type="module" src="/frontend/js/app.js"></script>
 
 </body>
+
 </html>

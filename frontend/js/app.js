@@ -1,6 +1,8 @@
 import { state } from "./state.js";
 import { getQuote, getAssetsByMarket } from "./api.js";
 import { renderMarketList, renderQuote, renderTicker } from "./ui.js";
+import { initChart } from "./chart.js";
+import { loadComponent } from "./loadComponents.js";
 
 /* ---------------------------------------------------
    CARREGA QUOTE PRINCIPAL
@@ -17,42 +19,30 @@ async function loadMarket(symbol) {
 function selectMarket(symbol) {
   state.selected = symbol;
   loadMarket(symbol);
+  initChart(symbol); // Actualitza la gràfica quan canvies de mercat
 }
 
 renderMarketList(selectMarket);
 
-/* Carrega inicial */
-loadMarket(state.selected);
-
-/* Refresc cada 30s */
-setInterval(() => {
-  loadMarket(state.selected);
-}, 30000);
-
-
 /* ---------------------------------------------------
-   TICKER DEL HEADER
+   INICIALITZACIÓ COMPLETA
 --------------------------------------------------- */
-const marketSelect = document.getElementById("market-select");
-
-marketSelect.addEventListener("change", async (e) => {
-  const market = e.target.value;
-  state.selected = market;
-
-  try {
-    const assets = await getAssetsByMarket(market);
-    renderTicker(assets);
-  } catch (err) {
-    console.error("Error carregant ticker:", err);
-  }
-});
-
-/* Carrega inicial del ticker */
 (async () => {
-  try {
-    const assets = await getAssetsByMarket(state.selected);
-    renderTicker(assets);
-  } catch (err) {
-    console.error("Error carregant ticker inicial:", err);
-  }
+  // 1) Carregar component de la gràfica
+  await loadComponent("chart-container", "chart.html");
+
+  // 2) Carregar mercat inicial
+  await loadMarket(state.selected);
+
+  // 3) Inicialitzar gràfica amb el mercat per defecte
+  initChart(state.selected);
+
+  // 4) Carregar ticker inicial
+  const assets = await getAssetsByMarket(state.selected);
+  renderTicker(assets);
+
+  // 5) Refresc cada 30s
+  setInterval(() => {
+    loadMarket(state.selected);
+  }, 30000);
 })();

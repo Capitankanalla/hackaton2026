@@ -210,3 +210,10 @@ body {
   display: none;
 }
 
+/* Estil per les gràfiques */
+.chart-component {
+  background: #1e2329;
+  padding: 20px;
+  border-radius: 8px;
+  height: 400px;
+}
