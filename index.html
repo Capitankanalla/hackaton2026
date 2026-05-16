@@ -8,13 +8,16 @@
 
 <body>
 
-<section id="hero">
-  <div class="hero-container">
+<!-- HEADER (Yahoo structure + Binance look) -->
+<header id="header">
 
-    <div class="hero-left">
+  <div class="header-top">
+    <div class="header-left">
       <h1>MarketPulse</h1>
       <p>Seguiment de mercats en temps real</p>
+    </div>
 
+    <div class="header-right">
       <select id="market-select">
         <option value="ibex35">España (IBEX35)</option>
         <option value="usa">USA (NASDAQ + S&P500)</option>
@@ -22,26 +25,28 @@
         <option value="asia">Asia</option>
       </select>
     </div>
-
-    <div class="hero-right">
-      <div id="carousel-container">
-        <!-- Carroussel dinàmic -->
-      </div>
-    </div>
-
   </div>
-</section>
 
-<div class="layout">
+  <div class="header-ticker">
+    <div id="ticker-container">
+      <!-- Ticker dinàmic -->
+    </div>
+  </div>
 
-  <!-- LEFT: Yahoo-style market list -->
-  <div class="sidebar">
+</header>
+
+
+<!-- LAYOUT PRINCIPAL (Yahoo style) -->
+<main class="layout">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar">
     <h3>Mercats</h3>
     <div id="marketList"></div>
-  </div>
+  </aside>
 
-  <!-- CENTER: Binance-style main panel -->
-  <div class="main">
+  <!-- CONTINGUT CENTRAL -->
+  <section class="main">
 
     <div class="header">
       <h2 id="symbol">--</h2>
@@ -53,19 +58,21 @@
       <p>📈 Chart placeholder (later Chart.js)</p>
     </div>
 
-  </div>
+  </section>
 
-  <!-- RIGHT: alerts / watchlist -->
-  <div class="rightbar">
+  <!-- RIGHT SIDEBAR -->
+  <aside class="rightbar">
     <h3>Preferits</h3>
     <div id="watchlist"></div>
 
     <h3>Alertes</h3>
     <div id="alerts"></div>
-  </div>
+  </aside>
 
-</div>
+</main>
 
+
+<!-- JS MODULES -->
 <script type="module" src="/frontend/js/state.js"></script>
 <script type="module" src="/frontend/js/api.js"></script>
 <script type="module" src="/frontend/js/ui.js"></script>

@@ -1,10 +1,17 @@
 import { state } from "./state.js";
-import { getQuote } from "./api.js";
-import { renderMarketList, renderQuote } from "./ui.js";
+import { getQuote, getAssetsByMarket } from "./api.js";
+import { renderMarketList, renderQuote, renderTicker } from "./ui.js";
 
+/* ---------------------------------------------------
+   CARREGA QUOTE PRINCIPAL
+--------------------------------------------------- */
 async function loadMarket(symbol) {
-  const data = await getQuote(symbol);
-  renderQuote(data);
+  try {
+    const data = await getQuote(symbol);
+    renderQuote(data);
+  } catch (err) {
+    console.error("Error carregant dades del mercat:", err);
+  }
 }
 
 function selectMarket(symbol) {
@@ -14,29 +21,38 @@ function selectMarket(symbol) {
 
 renderMarketList(selectMarket);
 
-// initial load
+/* Carrega inicial */
 loadMarket(state.selected);
 
-// refresh cada 30s
+/* Refresc cada 30s */
 setInterval(() => {
   loadMarket(state.selected);
 }, 30000);
 
-import { getAssetsByMarket } from "./api.js";
-import { renderCarousel } from "./ui.js";
 
-const heroSelect = document.getElementById("market-select");
+/* ---------------------------------------------------
+   TICKER DEL HEADER
+--------------------------------------------------- */
+const marketSelect = document.getElementById("market-select");
 
-heroSelect.addEventListener("change", async (e) => {
+marketSelect.addEventListener("change", async (e) => {
   const market = e.target.value;
   state.selected = market;
 
-  const assets = await getAssetsByMarket(market);
-  renderCarousel(assets);
+  try {
+    const assets = await getAssetsByMarket(market);
+    renderTicker(assets);
+  } catch (err) {
+    console.error("Error carregant ticker:", err);
+  }
 });
 
-// carregar carroussel inicial
+/* Carrega inicial del ticker */
 (async () => {
-  const assets = await getAssetsByMarket(state.selected);
-  renderCarousel(assets);
+  try {
+    const assets = await getAssetsByMarket(state.selected);
+    renderTicker(assets);
+  } catch (err) {
+    console.error("Error carregant ticker inicial:", err);
+  }
 })();
