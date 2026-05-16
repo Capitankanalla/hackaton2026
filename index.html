@@ -8,7 +8,6 @@
 
 <body>
 
-<!-- HEADER (Yahoo structure + Binance look) -->
 <header id="header">
 
   <div class="header-top">
@@ -19,8 +18,8 @@
 
     <div class="header-right">
       <select id="market-select">
-        <option value="ibex35">España (IBEX35)</option>
-        <option value="usa">USA (NASDAQ + S&P500)</option>
+        <option value="ibex35">España</option>
+        <option value="usa">USA</option>
         <option value="europe">Europa</option>
         <option value="asia">Asia</option>
       </select>
@@ -29,21 +28,33 @@
 
   <div class="header-ticker">
     <div id="ticker-container">
-      <!-- Ticker dinàmic -->
     </div>
   </div>
 
 </header>
 
 
-<!-- LAYOUT PRINCIPAL (Yahoo style) -->
+<!-- LAYOUT PRINCIPAL -->
 <main class="layout">
 
   <!-- LEFT SIDEBAR -->
-  <aside class="sidebar">
+   <aside class="sidebar">
+    <div id="marketList"></div>
+  <h3>Tendències</h3>
+  <div id="trending"></div>
+
+  <h3>Volums més alts</h3>
+  <div id="highVolume"></div>
+
+  <h3>Gainers / Losers</h3>
+  <div id="gainersLosers"></div>
+</aside>
+
+   
+  <!-- <aside class="sidebar">
     <h3>Mercats</h3>
     <div id="marketList"></div>
-  </aside>
+  </aside> -->
 
   <!-- CONTINGUT CENTRAL -->
   <section class="main">

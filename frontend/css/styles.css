@@ -161,3 +161,52 @@ body {
   text-align: center;
   opacity: 0.8;
 }
+
+.header-right select {
+  background: #1e2329;
+  color: white;
+  border: 1px solid #3a414c;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.header-right select:hover {
+  background: #2b3139;
+  border-color: #5a6370;
+}
+
+.sidebar h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.sidebar-item {
+  padding: 6px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  background: #1e2329;
+  transition: 0.2s;
+}
+
+.sidebar-item:hover {
+  background: #2b3139;
+}
+
+.sidebar-item.green {
+  color: #0ecb81;
+}
+
+.sidebar-item.red {
+  color: #f6465d;
+}
+
+#marketList {
+  display: none;
+}
+
