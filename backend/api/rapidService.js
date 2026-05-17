@@ -21,4 +21,20 @@ async function getQuote(symbol) {
   return res.data;
 }
 
-module.exports = { getQuote };
+async function getPriceHistory(symbol, range = "1mo") {
+  const res = await rapid.get("/stock/get-chart", {
+    params: {
+      symbol,
+      interval: "1d",
+      range,
+      region: "ES",
+    },
+  });
+
+  return res.data;
+}
+
+
+module.exports = { getQuote, getPriceHistory };
+
+//module.exports = { getQuote };
