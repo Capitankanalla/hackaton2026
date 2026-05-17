@@ -2,8 +2,6 @@ const BASE = "http://localhost:3000";
 
 export async function getQuote(symbol) {
   const res = await fetch(`${BASE}/api/assets/${symbol}`);
-  console.log("REFRESH SYMBOL:", symbol);
-
   return res.json();
 }
 

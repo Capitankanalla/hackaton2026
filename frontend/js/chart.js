@@ -12,7 +12,8 @@ export async function refreshChart() {
   if (!currentSymbol) return;
 
   try {
-    const res = await fetch(`/api/prices/${currentSymbol}`);
+    //const res = await fetch(`/api/prices/${currentSymbol}`);
+    const res = await fetch(`/api/markets/${currentSymbol}`);
     const data = await res.json();
 
     const labels = data.map(p => p.t);
