@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const MarketsController = require("../controllers/marketsController");
+const marketsController = require("../controllers/marketsController");
 
-router.get("/", MarketsController.getMarkets);
+router.get("/:market", marketsController.getMarketAssets);
+// router.get("/", MarketsController.getMarkets);
 
 module.exports = router;
