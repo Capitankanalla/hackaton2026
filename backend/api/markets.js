@@ -54,35 +54,35 @@ const usa = [
 ];
 
 const europe = [
-  // 🇩🇪 DAX 40
-  { symbol: "SAP", name: "SAP SE", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "SIE", name: "Siemens", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "BAS", name: "BASF", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "BMW", name: "BMW", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "VOW3", name: "Volkswagen", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "DTE", name: "Deutsche Telekom", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "ALV", name: "Allianz", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  // 🇩🇪 DAX 40 (XETRA → .DE)
+  { symbol: "SAP.DE", name: "SAP SE", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "SIE.DE", name: "Siemens", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "BAS.DE", name: "BASF", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "BMW.DE", name: "BMW", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "VOW3.DE", name: "Volkswagen", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "DTE.DE", name: "Deutsche Telekom", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "ALV.DE", name: "Allianz", type: "stock", exchange: "XETRA", currency: "EUR", region: "EU", market: "EUROPE" },
 
-  // 🇫🇷 CAC 40
-  { symbol: "OR", name: "L'Oréal", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "MC", name: "LVMH", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "AIR", name: "Airbus", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "BNP", name: "BNP Paribas", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "ENGI", name: "Engie", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "KER", name: "Kering", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  // 🇫🇷 CAC 40 (Euronext París → .PA)
+  { symbol: "OR.PA", name: "L'Oréal", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "MC.PA", name: "LVMH", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "AIR.PA", name: "Airbus", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "BNP.PA", name: "BNP Paribas", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "ENGI.PA", name: "Engie", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "KER.PA", name: "Kering", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
 
-  // 🇬🇧 FTSE 100
-  { symbol: "HSBA", name: "HSBC Holdings", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
-  { symbol: "BP", name: "BP PLC", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
-  { symbol: "AZN", name: "AstraZeneca", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
-  { symbol: "ULVR", name: "Unilever", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
-  { symbol: "RIO", name: "Rio Tinto", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
-  { symbol: "GSK", name: "GSK", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
+  // 🇬🇧 FTSE 100 (LSE → .L)
+  { symbol: "HSBA.L", name: "HSBC Holdings", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
+  { symbol: "BP.L", name: "BP PLC", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
+  { symbol: "AZN.L", name: "AstraZeneca", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
+  { symbol: "ULVR.L", name: "Unilever", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
+  { symbol: "RIO.L", name: "Rio Tinto", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
+  { symbol: "GSK.L", name: "GSK", type: "stock", exchange: "LSE", currency: "GBP", region: "EU", market: "EUROPE" },
 
-  // 🇳🇱 AEX
-  { symbol: "ASML", name: "ASML Holding", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "AD", name: "Ahold Delhaize", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
-  { symbol: "DSM", name: "DSM Firmenich", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" }
+  // 🇳🇱 AEX (Amsterdam → .AS)
+  { symbol: "ASML.AS", name: "ASML Holding", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "AD.AS", name: "Ahold Delhaize", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" },
+  { symbol: "DSM.AS", name: "DSM Firmenich", type: "stock", exchange: "EURONEXT", currency: "EUR", region: "EU", market: "EUROPE" }
 ];
 
 
