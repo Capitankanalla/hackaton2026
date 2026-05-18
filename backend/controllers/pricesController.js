@@ -1,25 +1,43 @@
 const Rapid = require("../api/rapidService");
+const { ibex35 } = require("../api/markets");
+
+// helper: evita crashes cuando no hay datos
+function safeArray(value) {
+  return Array.isArray(value) ? value : [];
+}
 
 module.exports = {
   // GET /api/prices/:symbol
   async getPriceHistory(req, res) {
     try {
-      const symbol = req.params.symbol.toUpperCase();
-
+      let symbol = req.params.symbol.toLowerCase(); 
+      if (symbol === "ibex35" || symbol === "ibex") {
+        symbol = "^IBEX";
+          } else {
+            symbol = req.params.symbol.toUpperCase();
+    }
+    
+      // acciones normales
       const data = await Rapid.getPriceHistory(symbol);
+      
+      const result = data?.chart?.result?.[0];
+      if (!result) {
+      return res.status(404).json({
+        error: "No data for symbol"
+      });
+      }
+      const timestamps = result.timestamp;
+      const quotes = result.indicators.quote[0];
 
-      const timestamps = data.timestamp;
-      const quotes = data.indicators.quote[0];
-
-      const result = timestamps.map((t, i) => ({
+     formatted = timestamps.map((t, i) => ({
         t,
-        c: quotes.close[i],
         o: quotes.open[i],
         h: quotes.high[i],
-        l: quotes.low[i]
+        l: quotes.low[i],
+        c: quotes.close[i],
       }));
 
-      res.json(result);
+      res.json(formatted);
 
     } catch (err) {
       console.error("Error getPriceHistory:", err);
