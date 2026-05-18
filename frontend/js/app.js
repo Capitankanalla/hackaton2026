@@ -45,6 +45,7 @@ marketSelect.addEventListener("change", async (e) => {
   try {
     const assets = await getAssetsByMarket(market);
     renderTicker(assets);
+      initChart(market);
   } catch (err) {
     console.error("Error carregant ticker:", err);
   }
