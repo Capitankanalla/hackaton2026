@@ -47,7 +47,7 @@ class MarketChatbot {
     const typingIndicator = this.addTypingIndicator();
 
     try {
-      // Get bot response
+      // Get bot response from AI
       const response = await this.getBotResponse(message);
       
       // Remove typing indicator and add bot response
@@ -85,36 +85,25 @@ class MarketChatbot {
   }
 
   async getBotResponse(userMessage) {
-    // Simple response logic based on keywords
-    const messageLower = userMessage.toLowerCase();
-    
-    if (messageLower.includes('preu') || messageLower.includes('precio')) {
-      return "Pots consultar els preus dels actius a la part central de la pàgina. Fes clic en qualsevol actiu per veure'n el detall.";
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userMessage })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.response;
+    } catch (error) {
+      console.error('Error calling AI chat:', error);
+      return 'Ho sento, estic tenint problemes per respondre. Prova més tard.';
     }
-    
-    if (messageLower.includes('millor') || messageLower.includes('guanyador')) {
-      return "Els millors guanyadors del moment es poden veure a la secció 'Gainers / Losers' al costat esquerre. Els actius amb més augment de preu apareixen primer.";
-    }
-    
-    if (messageLower.includes('perd') || messageLower.includes('perdedor')) {
-      return "Els actius que estan perdent valor es mostren a la secció 'Gainers / Losers'. Els perdedors es mostren al final de la llista.";
-    }
-    
-    if (messageLower.includes('mercats') || messageLower.includes('market')) {
-      const markets = this.contextData?.markets?.map(m => m.market).join(', ') || 'España, USA, Europa, Asia';
-      return `Els mercats disponibles són: ${markets}. Pots seleccionar-los al menú del header.`;
-    }
-    
-    if (messageLower.includes('gràfica') || messageLower.includes('chart')) {
-      return "La gràfica del mercat es mostra a la part central de la pàgina. Pots veure el preu d'un actiu en funció del temps.";
-    }
-    
-    if (messageLower.includes('ajuda') || messageLower.includes('help')) {
-      return "Puc ajudar-te a trobar informació sobre mercats, actius, gràfiques o preus. Prova preguntes com 'Quins són els millors guanyadors?' o 'Mostra el mercat USA'.";
-    }
-    
-    // Default response
-    return "Sóc un assistent de mercat. Puc ajudar-te a trobar informació sobre els actius, mercats i preus. Prova preguntar sobre 'millors guanyadors' o 'mercats disponibles'.";
   }
 }
 
