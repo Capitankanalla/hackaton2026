@@ -12,11 +12,16 @@ export async function refreshChart() {
   if (!currentSymbol) return;
 
   try {
-    //const res = await fetch(`/api/prices/${currentSymbol}`);
-    const res = await fetch(`/api/markets/${currentSymbol}`);
+    const res = await fetch(`/api/prices/${currentSymbol}`);
+    //const res = await fetch(`/api/markets/${currentSymbol}`);
     const data = await res.json();
-
-    const labels = data.map(p => p.t);
+      if (!Array.isArray(data)) {
+        console.error("API ERROR:", data);
+        return;}
+    const labels = data.map(p => {
+      const d = new Date(p.t * 1000);
+      return `${d.getDate()}/${d.getMonth() + 1}`;
+    });
     const values = data.map(p => p.c);
 
     const ctx = document.getElementById("marketChart").getContext("2d");
