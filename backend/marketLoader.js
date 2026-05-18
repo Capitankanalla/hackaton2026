@@ -13,7 +13,7 @@ async function loadMarket(marketName) {
       currency: asset.currency,
       type: "stock",
       exchange: asset.exchange,
-      region: asset.region || "global"
+      region: (asset.region || "GLOBAL").toUpperCase()
     });
   }
 }
