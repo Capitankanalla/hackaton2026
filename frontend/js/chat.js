@@ -3,14 +3,12 @@ class MarketChatbot {
   constructor() {
     this.messagesContainer = document.getElementById('chatbot-messages');
     this.inputElement = document.getElementById('chatbot-input');
-    this.sendButton = document.getElementById('chatbot-send');
     
     this.init();
   }
 
   init() {
-    // Add event listeners
-    this.sendButton.addEventListener('click', () => this.handleSendMessage());
+    // Add event listeners - only Enter key now (button removed)
     this.inputElement.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         this.handleSendMessage();

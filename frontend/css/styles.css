@@ -262,29 +262,21 @@ body {
 }
 
 .chatbot-input-container {
-  display: flex;
-  gap: 5px;
+  display: block;
+  margin-top: 10px;
 }
 
 #chatbot-input {
-  flex: 1;
-  padding: 8px 12px;
+  width: 100%;
+  padding: 10px;
   border: 1px solid #3a414c;
   border-radius: 20px;
   background-color: #2b3139;
   color: white;
+  font-size: 14px;
   outline: none;
 }
 
-#chatbot-send {
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-#chatbot-send:hover {
-  background-color: #0056b3;
+#chatbot-input::placeholder {
+  color: #888;
 }
