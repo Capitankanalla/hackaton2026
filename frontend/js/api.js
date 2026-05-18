@@ -1,4 +1,4 @@
-const BASE = "http://localhost:3000";
+const BASE = "http:${process.env.DB_HOST}:3000";
 
 export async function getQuote(symbol) {
   const res = await fetch(`${BASE}/api/assets/${symbol}`);
